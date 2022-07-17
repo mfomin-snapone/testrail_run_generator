@@ -1,0 +1,31 @@
+[main]
+debug : DEBUG
+max_temperature : 120
+average_temperature : 100
+temperature_unit : Farenheit
+check_rate : 10
+
+[ignored section]
+
+[rack 01]
+fan :  {'r_type': 'rp', 'gpio_pin': 13, 'on': 1}
+# Create a dictionary of temperature sensors.
+# Multiline options like this need a space or tab at the beginning of each line
+# Only the device_id is required for each temperature sensor
+temperature_sensors : {
+    "load 1" : {
+        'device_id' : '28.200BFA050000',
+        'owfs_use_cached_temp': True,
+        'owfs_precision': 12,
+        'owfs_root': '/mnt/1wire',
+        'calibration_offset': 0.0
+    },
+    "load 2" : {
+        'device_id' : '29.20aBbA077000',
+        'owfs_use_cached_temp': False,
+        'owfs_precision': 12,
+        'owfs_root': '/mnt/1wire',
+        'calibration_offset': 0.1
+    }
+ }
+

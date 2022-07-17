@@ -1,0 +1,91 @@
+#IMPORTANT INFORMATION
+#
+#AT THE MOMENT THE MATRIX DOES NOT SUPPORT LISTS OR COMMA-DELIMETED LISTS
+#WHEN ASSIGNING numloads, ONLY PROVIDE THE TOTAL NUMBER OF LOADS AND WIRE
+#THE DINRAIL MODULES BEGINNING AT CH0 AND UP, CONTIGUOUS CHANNELS ONLY
+
+[main]
+matrix_instance_num = 0
+
+#DinRail Devices Associated with Matrix Operation
+[dinmatrix0]
+ip = 192.168.1.32
+mac = 0000
+
+[dinmatrix1]
+ip = 192.168.1.33
+mac = 0001
+
+[dinmatrix2]
+ip = 192.168.1.34
+mac = 0002
+
+[dinmatrix3]
+ip = 192.168.1.35
+mac = 0003
+
+[dinmatrix4]
+ip = 192.168.1.36
+mac = 0004
+
+[dinmatrix5]
+ip = 192.168.1.37
+mac = 0005
+
+[dinmatrix6]
+ip = 192.168.1.38
+mac = 0006
+
+[dinmatrix7]
+ip = 192.168.1.39
+mac = 0007
+
+
+#DinRail Devices Associated with Load Bus Operation
+[dinbus0]
+ip = 192.168.1.64
+mac = 0020
+loadtype = TEN VOLT
+numloads = 8
+
+[dinbus1]
+ip = 192.168.1.65
+mac = 0021
+loadtype = INCANDESCENT
+numloads = 8
+
+[dinbus2]
+ip = 192.168.1.66
+mac = 0022
+loadtype = LED
+numloads = 8
+
+[dinbus3]
+ip = 192.168.1.67
+mac = 0023
+loadtype = ELV
+numloads = 8
+
+[dinbus4]
+ip = 192.168.1.68
+mac = 0024
+loadtype = FANS
+numloads = 8
+
+[dinbus5]
+ip = 192.168.1.69
+mac = 0025
+loadtype = MLV
+numloads = 8
+
+[dinbus6]
+ip = 192.168.1.70
+mac = 0026
+loadtype = CFL
+numloads = 8
+
+[dinbus7]
+ip = 192.168.1.71
+mac = 0027
+loadtype = FLUORESCENT
+numloads = 8
