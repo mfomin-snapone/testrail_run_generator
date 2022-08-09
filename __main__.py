@@ -7,7 +7,7 @@ parser.add_argument('--project_id', default=None)
 parser.add_argument('--suite_id', default=None)
 parser.add_argument('--testrun_name', default=None)
 parser.add_argument('--include_all_cases', default=None)
-parser.add_argument("--list", nargs="+", default=["a", "b"])
+parser.add_argument("--list", nargs="+", default=[])
 args = parser.parse_args()
 
 
@@ -23,17 +23,22 @@ def testRunID():
     project_id = args.project_id
     suite_id = args.suite_id
     test_run_name = args.testrun_name
+    if len(args.list) == 0:
+        all_cases = True
+    else:
+        all_cases = False
+    all_cases = True if len(args.list) == 0 else False
     response2 = testrailReport.add_run(project_id
                                        , suite_id
                                        , test_run_name
                                        , 'Test run created using the TestRail.'  # required.  test run description
-                                       , include_all_cases=args.include_all_cases
+                                       , include_all_cases=all_cases
                                        , case_ids=args.list
                                        # optional.  This is already defaulted to True i only included it here for visibility.  not required for this example
                                        # , milestone_id='Some meaningful milestone'# optional.  use if you want to link this test run to a milestone
                                        # , assignedto_id=152# optional.  use this if you want to assign the run to a particular user
                                        )
-    print('testrail response3: {}'.format(response2))
+    print('testrail response: {}'.format(response2))
     testRunID = response2['id']
     return testRunID
 
